@@ -1,0 +1,14 @@
+'''mermaid
+flowchart TD
+    Start([Start]) --> GenerateRandom[Generate a random number between 1 and 100]
+    GenerateRandom --> UserInput[Prompt user for a guess]
+    UserInput -->|Valid input| CheckGuess[Is the guess correct?]
+    UserInput -->|Invalid input| InvalidInput[Display error: "Invalid input, please enter a number"]
+    InvalidInput --> UserInput
+    CheckGuess -->|Correct| Success[Display "Correct! You've guessed the number."]
+    CheckGuess -->|Too High| HighGuess[Display "Too high, try again"]
+    CheckGuess -->|Too Low| LowGuess[Display "Too low, try again"]
+    HighGuess --> UserInput
+    LowGuess --> UserInput
+    Success --> End([End])
+'''
